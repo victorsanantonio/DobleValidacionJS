@@ -3,10 +3,31 @@
 	<head>
 		<title>Reto 2</title>
 		<meta charset="UTF-8">
-
 		<script type="text/javascript">
 			function validacion() {
 				//TODO: a completar aqui
+				var textoCampo1 = document.getElementById('pass1').value;
+				var textoCampo2 = document.getElementById('pass2').value;
+				
+				//Si los campos no están vacíos
+				if(!camposVacios(textoCampo1, textoCampo2)){
+					//Si los campos no son iguales
+					if(textoCampo1!=textoCampo2){
+						alert("Los datos introducidos deben de ser iguales");
+					}
+				}
+				else{
+					alert("Los campos no pueden estar vacíos");
+				}
+			}
+			
+			function camposVacios(textoCampo1, textoCampo2){
+				if(textoCampo1=="" || textoCampo2==""){
+					return true;
+				}
+				else{
+					return false;
+				}
 			}
 		</script>
 	</head>
@@ -14,7 +35,7 @@
 		<form id="formulario">
 			<p>Contraseña <input type="password" id="pass1"></p>
 			<p>Repite la contraseña <input type="password" id="pass2"></p>
-			<p><input type="submit" name="send" value="Enviar" onclick="validacion();"></p>
+			<p><input type="submit" name="send" value="Enviar" onclick="validacion()"></p>
 		</form>
 	</body>
 </html>
